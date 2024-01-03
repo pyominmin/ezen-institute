@@ -2,3 +2,14 @@
 
 ! = 단축키
 
+<!DOCTYPE html>
+<html lang="ko">//언어 한국어로 변경
+  <head>
+    <meta charset="UTF-8" />//아스키 코드 한국어
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />//모바일로 볼 때 크기 조정
+    <title>my home</title>//탭의 제목
+  </head>
+  <body>
+    <h1>오늘은 첫 기초 수업중</h1>
+  </body>
+</html>
