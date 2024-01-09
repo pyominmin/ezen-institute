@@ -4,30 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>css기본</title>
-    <style>
-      p {
-        color: blue;
-        font-size: 20px;
-      }
-
-      .target {
-        font-weight: bold;
-        color: red;
-      }
-    </style>
+    <link rel="stylesheet" href="css/test.css" />
   </head>
   <body>
     <div id="wrapper">
-    <h1>CSS 기초</h1>
-    <p>
-      html은 텍스트나 이미지, 표 같은 각 요소를 웹 문서에 넣는 것(홈페이지 뼈대)
-    </p>
-    <p class="target">
-      css는 텍스트 색상이나 크기, 이미지 위치, 표 색상, 배치 방법 등 웹 문서의
-      디자인 요소를 담당
-    </p>
-    <p>javascript는 정적인 홈페이지를 동적으로 만들어주는 프로그램</p>
-  </div>
+      <h1>CSS 기초</h1>
+      <p>
+        html은 텍스트나 이미지, 표 같은 각 요소를 웹 문서에 넣는 것(홈페이지
+        뼈대)
+      </p>
+      <!--클래스는 중복이 가능하다-->
+      <p class="target">
+        css는 텍스트 색상이나 크기, 이미지 위치, 표 색상, 배치 방법 등 웹 문서의
+        디자인 요소를 담당
+      </p>
+      <p>javascript는 정적인 홈페이지를 동적으로 만들어주는 프로그램</p>
+    </div>
+    <!-- 공부하기 위해서도 주석을 남기지만 홈페이지에서 숨길 때 자주 쓴다-->
+    <h2>오늘의 식단</h2>
+    <ul>
+      <li>김치찌개</li>
+      <li style="color: red">잡곡밥</li>
+      <li class="target">김치</li>
+      <li>계란말이</li>
+      <li>멸치볶음</li>
+    </ul>
   </body>
 </html>
 
@@ -39,3 +40,26 @@ style안의 주석 : /* */
 
 스타일은 내부스타일, 외부스타일, 인라인스타일이 있는데 실무때는 외부스타일만 사용함
 공부할때는 내부스타일 많이 씀
+
+css
+
+* {
+  /* 전체선택자 */
+  margin: 0;
+  padding: 0;
+}
+
+p {
+  /*선택자*/
+  color: blue; /*속성값*/
+  font-size: 20px;
+}
+
+.target {
+  font-weight: bold;
+  color: greenyellow;
+}
+
+#wrapper {
+  border: 1px solid black;
+}
