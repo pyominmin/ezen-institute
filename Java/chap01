@@ -1,0 +1,79 @@
+
+public class VariableEx01 {
+
+	public static void main(String[] args) {
+		System.out.println("안녕하세요"); //안녕하세요 문자가 콘솔로 출력
+		System.out.println(20);
+		System.out.println(50+30);//숫자를 사용하면 산술연산
+		System.out.println("대한민국"+"화이팅");//문자를 사용하면 연결연산
+		
+	}
+
+}
+
+
+import java.util.Scanner;
+
+public class VariableEx02 {
+
+	public static void main(String[] args) {
+		//상수> 숫자 상수, 문자 상수
+		//변수 : 단 하나의 값을 저장할 수 있는 메모리 공간
+		//변수 > 숫자 변수, 문자변수
+		//		int korea;//변수의 선언
+		//korea = 20;//초기화
+		//변수의 종류 int, String 등
+//		int korea = 20; //변수의 선언과 초기화
+//		korea=50;
+//		System.out.println(korea);
+		Scanner in=new Scanner(System.in);
+		int score = in.nextInt();
+		System.out.println("시험점수=" + score);
+		if(score>=80) {
+			System.out.println("합격하셨숩니다.");
+		}else {
+			System.out.println("다음에 도전해주세요");
+		}
+		
+	}
+
+}
+
+
+public class VariableEX03 {
+
+	public static void main(String[] args) {
+		int x=10;
+		int y=2;
+		System.out.println("x+y="+(x+y));
+		System.out.println("x-y="+(x-y));
+		System.out.println("x*y="+(x*y));
+		System.out.println("x/y="+(x/y));
+
+	}
+
+}
+
+
+
+public class VariableEx04 {
+
+	public static void main(String[] args) {
+//		System.out.println("안녕"+"철수");
+//		System.out.println("점수="+86+10);//연결연산
+//		System.out.println("점수="+(86+10));//괄호를 사용하여 우선연산
+//		System.out.println(50+30+15);
+		
+		int x=10;
+		int y=20;
+		int num = x;
+		
+		x=y;
+		y = num;//소트알고리즘
+		
+		System.out.println("x값=" + x);
+		System.out.println("y값=" + y);
+		
+	}
+
+}
