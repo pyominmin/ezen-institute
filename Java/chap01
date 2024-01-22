@@ -18,7 +18,7 @@ public class VariableEx02 {
 
 	public static void main(String[] args) {
 		//상수> 숫자 상수, 문자 상수
-		//변수 : 단 하나의 값을 저장할 수 있는 메모리 공간
+		//변수 : 단 하나의 값을 저장할 수 있는 메모리 공간// _과 $는 변수로 사용가능
 		//변수 > 숫자 변수, 문자변수
 		//		int korea;//변수의 선언
 		//korea = 20;//초기화
@@ -73,6 +73,75 @@ public class VariableEx04 {
 		
 		System.out.println("x값=" + x);
 		System.out.println("y값=" + y);
+		
+	}
+
+}
+
+
+import java.util.Scanner;
+
+public class VariableEX05 {
+
+	public static void main(String[] args) {
+		System.out.print("원하는 시간을 입력하시오>>");
+		Scanner in = new Scanner(System.in);
+		int hour=in.nextInt();
+		
+		int min = hour*60;
+		
+		System.out.println(hour+"시간은 총 "+ min+ "분 입니다" );
+		
+	}
+
+}
+
+
+import java.util.Scanner;
+
+public class VariableEX06 {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.print("총 걸린 시간을 분으로 입력하시오 : ");
+		int hour = in.nextInt();
+		
+		int allmin = hour%60;
+		int allhour = hour/60;
+		System.out.println("총 걸린 시간은 " + allhour+"시간 "+ allmin+ "분입니다.");
+	}
+
+}
+
+
+import java.util.Scanner;
+
+public class VariableEX07 {
+
+	public static void main(String[] args) {
+		System.out.print("금액을 입력하세요 : ");
+		Scanner in = new Scanner(System.in);
+		int money= in.nextInt();
+		int tenT = money/10000;//전체 금액을 만으로 나눠서 몫
+		money=money%10000;//전체 금액에서 만원권을 제외한 나머지(%)
+		int fiveT = money/5000;//만원권을 제외한 나머지 금액에서 오천원 개수
+		money=money%5000;//나머지 금액에서 오천원권을 제외한 나머지(%)
+		int oneT = money/1000;
+		money=money%1000;
+		int fiveH = money/500;
+		money=money%500;
+		int oneH = money/100;
+		money=money%100;
+		int ten = money/10;
+		
+		System.out.println("만원권=" + tenT+"장");
+		System.out.println("오천원권=" +fiveT+"장");
+		System.out.println("천원권= " + oneT+"장");
+		System.out.println("오백원= " + fiveH+"개");
+		System.out.println("백원= "+ oneH+"개");
+		System.out.println("십원= "+ ten+"개");
+		
+		
 		
 	}
 
