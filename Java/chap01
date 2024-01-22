@@ -146,3 +146,78 @@ public class VariableEX07 {
 	}
 
 }
+
+
+public class VariableEX08 {
+
+	public static void main(String[] args) {
+		int num1=20;
+		int num2=0b1110;//0b는 2진수로 계산한다는 뜻
+		int num3=026;//0만 붙이면 8진수로 인식
+		int num4=0x2A7;//0x는 16진수 표현방식
+		System.out.println(num1);
+		System.out.println(num2);
+		System.out.println(num3);
+		System.out.println(num4);
+
+	}
+
+}
+
+
+
+public class VariableEX09 {
+
+	public static void main(String[] args) {
+		//변수의 타입 변수 이름;
+		//변수의 타입 변수이름=초기값;
+		
+		//정수 :byte(1), short(2), int(4), long(8)큰숫자 뒤에 L을 붙여서 Long데이터에 담으라고 한다. 
+		long num1=2147483648L;
+		System.out.println(num1);
+		
+		//실수 :(부동소수점수)float(4), double(8)
+		double num2=5.0/2.0;
+		System.out.println(num2);
+		
+		float num3=45.23f;//f를 붙여야 출력됨
+		System.out.println(num3);
+		
+		double num4=2E5;//2*10^5 지수 표현하는 것
+		System.out.println(num4);
+		
+		double num5=2E-5;//2*10^-5
+		System.out.println(num5);
+		
+		float num6=0.12345678912345f;//반올림됨
+		System.out.println(num6);
+
+	}
+
+}
+
+public class VariableEX10 {
+
+	public static void main(String[] args) {
+		//문자형 : char(2)
+		char ch1 ='A';
+		System.out.println(ch1);
+		
+		char ch2 = 65;
+		System.out.println(ch2);
+		
+		char ch3 = '가';
+		System.out.println(ch3);
+		
+		char ch4 = 44032;//유니코드값표
+		System.out.println(ch4);
+		
+		char ch5 = 0xAC00;
+		System.out.println(ch5);
+		
+		char ch6 = '\uAC00';
+		System.out.println(ch6);
+
+	}
+
+}
