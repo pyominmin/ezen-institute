@@ -50,3 +50,37 @@
 		}
 		
 	}
+
+public static void main(String[] args) {
+		//삼항연산자
+		int num1 = 70;
+		int num2 = 30;
+		//int result = (조건식)? 값 또는 수식 : 값 또는 수식;
+		int result = (num1 > num2)? num1 : num2;
+		System.out.println("두 수 중에 큰 값은 " + result + "입니다");
+	}
+
+
+	public static void main(String[] args) {
+		System.out.print("상품의 가격을 입력하시오 : ");
+		Scanner in = new Scanner(System.in);
+		int price = in.nextInt();
+		
+		//방법1
+//		int discount;
+//		if(price >= 10000) {
+//			discount = price - (price * 0.2);
+//		}else {
+//			discount = price - (price * 0.1);
+//		}
+		
+		//방법2
+//		double discountRate = price>=10000 ? 0.2 : 0.1;
+//		double discount = price - (price * discountRate);
+		
+		//방법3
+		double discount = price>=10000 ?(price * 0.8) : (price * 0.9);
+		
+		System.out.println("상품의 가격은"+ price + "원이고 할인율을 적용하여 "+ (int)discount +"원에 구입 가능합니다.");
+	}
+
