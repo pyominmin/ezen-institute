@@ -20,3 +20,38 @@
 	}
 
 }
+
+	public static void main(String[] args) {
+		int value = 50;
+		byte bValue = (byte)value;//형변환(casting)
+		System.out.println(bValue);
+		
+		double dValue = 45.36;
+		int num = (int)dValue;
+		System.out.println(num);
+		
+		byte x=10;
+		byte y=20;
+		int result= x + y;
+		System.out.println(result);
+		
+	}
+
+}
+
+
+	public static void main(String[] args) {
+		String str1 = "10";
+		String str2 = "20";
+		System.out.println(Integer.parseInt(str1)+ Integer.parseInt(str2));//형변환되어서 산술연산됨
+		
+		int num = 10;
+		System.out.println(String.valueOf(num));//정수를 문자로 변환
+		String name = "김철수";
+		int age = 25;
+		System.out.println("내 이름은 " + name + "이고 나이는 " + age + "세입니다.");
+		System.out.printf("내 이름은 %s이고 나이는 %d세입니다", name, age);
+
+	}
+
+}
