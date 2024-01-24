@@ -66,6 +66,6 @@ public static void main(String[] args) {
 		}else {
 			System.out.println("당신이 졌습니다.");
 		}
-		System.out.println("[컴퓨터] : " + choice[com-1]);
+		System.out.println("[컴퓨터] : " + choice[com-1] + "]★[나 : " + choice[my-1]+"]");
 	}
 
