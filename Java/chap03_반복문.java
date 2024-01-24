@@ -41,3 +41,28 @@ public static void main(String[] args) {
 		System.out.println("1부터 100까지의 홀수의 합 = " + oddSum);
 	}
 
+public static void main(String[] args) {
+		int i;
+		int num = 0;
+		
+		for(i = 1; i <= 100; i++) {
+			num += i;
+			if(num >= 3500) {
+				break;
+			}
+		}
+		System.out.println(i);
+	}
+
+
+public static void main(String[] args) {
+		int sum = 0;
+		for(int i = 1; i <= 100; i++) {
+			if(i % 2 != 0) {
+				continue;//반복문의 처을으로 빠져나간다.
+			}
+			sum +=i;
+		}
+		System.out.println("1부터 100까지 짝수의 합=" + sum);
+	}
+
