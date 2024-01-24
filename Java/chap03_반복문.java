@@ -166,3 +166,38 @@ public static void main(String[] args) {
 
 
 
+public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int num = 0;
+		boolean run = true;
+		while(true) {//무한반복문
+			++num;
+			System.out.println("안녕하세요" + num);
+			if(num==1560) {
+				run = false;//또는 break;
+			}
+		}
+	}
+
+
+public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		int num;
+		boolean run = true;
+		while (run) {
+			System.out.print("로또 자동번호를 생성하려면 c를 입력, 그만하시려면 q를 입력 : ");
+			String choice = in.nextLine();
+			if (choice.equals("c")) {
+				for (int i = 1; i <= 6; i++) {
+					num = (int) (Math.random() * 45) + 1;
+					System.out.println(i + "번째 숫자 : " + num);
+				}
+			}else if(choice.equals("q")) {
+				break;//run = false;
+			}else {
+				System.out.println("입력 오류 다시 입력하세요");
+			}
+
+		}
+		System.out.println("**프로그램 종료**");
+	}
