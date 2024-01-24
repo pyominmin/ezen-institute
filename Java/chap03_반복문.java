@@ -1,5 +1,6 @@
 반복문(for, while, do-while)
-
+*for문
+	
   public static void main(String[] args) {
 		System.out.println("컴퓨터가 인사를 시작합니다.");
 		for(int i = 1; i <= 5; i++) {
@@ -137,4 +138,31 @@ public static void main(String[] args) {
 
 		}
 	}
+
+
+	public static void main(String[] args) {
+		exit:for(int i = 1; i <= 5; i++) {
+			for(int j = 1; j <= 5; j++) {
+				System.out.println(i + "---" + j);
+				if(i == 3) {
+					break exit;//반복문을 탈출할 수 있게 도와줌
+				}
+			}
+		}
+	}
+
+
+*while문//데이터베이스에서 많이 활용
+
+public static void main(String[] args) {
+		int sum=0;
+		int i = 1;
+		while(i<=100) {
+			sum+=i;
+			i++;
+		}
+		System.out.println("1부터 100까지의 합= "+ sum);
+	}
+
+
 
