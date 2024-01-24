@@ -50,3 +50,22 @@ int[] nums = {45, 90, 23, 42, 77, 96, 32, 43, 12, 15}; //배열 선언과 초기
 	}
 
 
+
+public static void main(String[] args) {
+		System.out.println("**컴퓨터와 가위바위보 게임**");
+		Scanner in = new Scanner(System.in);
+		System.out.print("선택해주세요(1.바위 2.가위 3.보) : ");
+		int my = in.nextInt();
+		String[] choice = { "바위", "가위", "보" };
+		int com = (int)(Math.random()*3)+1;
+		
+		if(com == my) {
+			System.out.println("컴퓨터와 비겼습니다.");
+		}else if((com == 1 && my == 3) || (com == 2 && my == 1) || (com == 3 && my == 2)) {
+			System.out.println("당신이 이겼습니다.");
+		}else {
+			System.out.println("당신이 졌습니다.");
+		}
+		System.out.println("[컴퓨터] : " + choice[com-1]);
+	}
+
