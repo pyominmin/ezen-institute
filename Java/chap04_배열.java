@@ -57,3 +57,41 @@
 		}
 	}
 
+*배열의 복사1
+public static void main(String[] args) {
+		//배열값 복사
+		int[] num1 = {10, 20, 30};
+		int[] num2 = new int[3];
+		
+		for(int i = 0; i < num2.length; i++) {
+			num2[i] = num1[i];//배열값 복사하기
+		}
+		for(int i = 0; i < num2.length; i++) {
+			System.out.println(num2[i]);//결과
+		}
+		
+	}
+
+*배열의 복사2
+public static void main(String[] args) {
+		//배열값 복사
+		int[] num1 = {10, 20, 30};
+		int[] num2 = new int[3];
+		System.arraycopy(num1, 0, num2, 0, num1.length);
+		for(int i = 0; i < num2.length; i++) {
+			System.out.println(num2[i]);//결과
+		}
+		
+	}
+
+
+*배열 총 합 구하기
+public static void main(String[] args) {
+		int[] nums = {85, 120, 15, 96, 8, 23, 63, 12};
+		int total = 0;
+		for(int i = 0; i < nums.length; i++) {
+			total += nums[i];
+		}
+		System.out.println(total);
+	}
+
