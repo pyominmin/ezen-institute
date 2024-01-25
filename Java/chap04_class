@@ -7,6 +7,19 @@ public class Account {
 	String ownerName;//예금주 이름
 	int balance;//잔액
 	
+	//빈 생성자
+	public Account() {
+		
+	}
+	
+	//생성자
+	public Account(String acc, String own, int bal) {//매개변수
+		this.accountNo = acc;//this로 멤버변수 구분
+		this.ownerName = own;
+		this.balance = bal;
+	}
+	
+	
 	//예금한다 메서드
 	public void deposit (int amount) {//
 		balance += amount;
@@ -19,10 +32,13 @@ public class Account {
 		balance -= amount;
 		return amount;
 	}
+}
+//예제1---------------------------------------------------------------------------------
+public class AccountEX01 {
 
-public static void main(String[] args) {
-		Account chulsu = new Account(); // chulsu 인스턴스 객체 생성
-		Account gildong = new Account();//gildong 인스턴스 객체 생성
+	public static void main(String[] args) {
+		Account chulsu = new Account(); // chulsu 인스턴스 객체 생성//빈 생성자
+		Account gildong = new Account();//gildong 인스턴스 객체 생성//빈 생성자
 		chulsu.accountNo = "111-22-33333";
 		chulsu.ownerName = "김철수";
 		chulsu.balance = 1000;
@@ -32,6 +48,8 @@ public static void main(String[] args) {
 		chulsu.deposit(5000);
 		gildong.deposit(3000);
 		chulsu.deposit(2000);
+		
+		
 		try {
 			int amount = gildong.withdraw(1200);
 			System.out.println("인출한 금액 = " + amount);
@@ -39,8 +57,34 @@ public static void main(String[] args) {
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
-
-  
 	}
 
+//예제2-----------------------------------------------------------------------------------------------
+
+public class AccountEx02 {
+	
+	public static void main(String[] args) {
+		Account min = new Account("22-33-55555", "민", 0);
+		Account dowoo = new Account("22-33-88888", "도우", 2000);
+		
+		min.deposit(5000);
+		try {
+			min.withdraw(1000);
+		} catch (Exception e) {//돈 찾는 건 예외처리를 해줬기 때문에 에러난다. 그러므로 try/catch 해준다.
+			e.printStackTrace();
+		}
+		
+		System.out.println("도우의 잔액 = "+ dowoo.balance);
+	}
 }
+
+
+
+*class 생성
+클래스를 설계
+멤버변수, 생성자, 메서드
+
+
+
+
+
