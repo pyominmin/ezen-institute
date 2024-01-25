@@ -6,7 +6,7 @@ public static void main(String[] args) {
 		
 	}
 
-*함수 equals
+*메서드 equals
 
 String str1 = "홍길동";
 		String str2 = "홍길동";
@@ -39,4 +39,66 @@ String str1 = "홍길동";
 
 
 
+
+*메서드 charAt(0)
+1.
+public static void main(String[] args) {
+//		String title = new String("우리모두 파이팅");//새로 메모리 만들기
+//		char ch = title.charAt(3);//3번째 문자 가져오기
+//		System.out.println(ch);
+		String ssn = "971012-2234567";
+		char sex = ssn.charAt(7);
+		
+		if(sex == '1' || sex == '3') {
+			System.out.println("남자입니다.");
+		}else if(sex == '2' || sex == '4') {
+			System.out.println("여자입니다.");
+		}else {
+			System.out.println("잘못된 주민번호입니다.");
+		}
+	}
+
+
+2.
+	public static void main(String[] args) {
+		String ssn = "9710122123456";
+		System.out.println("총 글자수 = " + ssn.length());
+		int len = ssn.length();
+		if(len == 13) {
+			System.out.println("주민번호 자리수가 맞습니다.");
+		}else {
+			System.out.println("주민번호 자리수가 틀립니다.");
+		}
+	}
+
+}
+
+*메서드 replace, substring
+
+
+public static void main(String[] args) {
+		String str = "우리나라 화이팅";
+		String newStr = str.replace("우리나라", "대한민국"); //앞의 글자를 뒤에 글자로 바꿔준다.
+		System.out.println(str);
+		System.out.println(newStr);//대한민국 화이팅
+		String str2 = "computer";
+		System.out.println(str.substring(5));//일부 문자열만 가져올 수 있다.//substring(5) 5번째 이후 문자부터 끝까지 가져온다.
+		System.out.println(str2.substring(3,6));//3번째 이후와 6번째 이전 글자를 가져온다.
+		String ssn = "971012-2234567";
+		System.out.println("주민번호 : " + ssn.substring(0,7) + "*******");
+	}
+
+
+*메서드 indexOf, lastIndexOf
+
+
+public static void main(String[] args) {
+		String str = "프로그램언어 자바를 매일 8시간씩 배우고 있다.";
+		int location = str.indexOf("파이썬");//앞에서 부터글자의 위치값을 알려준다.//글자를 못찾으면 -1
+		System.out.println(location);
+		String str2 = "자바의 정석은 자바의 기초부터 활용까지 자바를 정복할 수 있다.";
+		int location2 = str2.lastIndexOf("자바");//뒤에서부터 글자를 찾는다. 하지만 세는건 앞에서부터
+		System.out.println(location2);
+		
+	}
 
