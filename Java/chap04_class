@@ -124,9 +124,9 @@ public class AccountEx03 {
 		
 		System.out.println("민이 : " + pyomin.balance);
 		System.out.println("거래은행 : " + Account.BANKNAME);//상수//정적멤버변수
-		System.out.println("계좌번호 : " + sunmin.accountNo);
-		System.out.println("예금주 이름 : " + sunmin.ownerName);
-		System.out.println("잔액 : " + sunmin.balance);
+		System.out.println("계좌번호 : " + sunmin.accountNo);//인스턴스 필드
+		System.out.println("예금주 이름 : " + sunmin.ownerName);//인스턴스 필드
+		System.out.println("잔액 : " + sunmin.balance);//인스턴스 필드
 	}
 }
 
