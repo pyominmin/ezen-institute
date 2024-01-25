@@ -72,6 +72,7 @@ public class AccountEx02 {
 			min.withdraw(1000);
 			printAccount(min);//출력
 			printAccount(dowoo);//출력
+			printAccount(new Account("33-77-55", "손흥민", 1000000));//익명객체 생성
 
 		} catch (Exception e) {// 돈 찾는 건 예외처리를 해줬기 때문에 에러난다. 그러므로 try/catch 해준다.
 			System.out.println(e.getMessage());
