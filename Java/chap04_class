@@ -3,7 +3,8 @@
 //은행 계좌 클래스
 public class Account {
 	//멤버변수(필드, 속성)//변수 소문자로//상수는 대문자로
-	final String BANKNAME = "신한은행";//늘상 똑같은 수 "상수"
+	//static : 정적멤버변수 원본 클래스에서만 사용가능
+	static final String BANKNAME = "신한은행";//늘상 똑같은 수 "상수"
 	String accountNo; //계좌번호
 	String ownerName;//예금주 이름
 	int balance;//잔액
@@ -105,6 +106,28 @@ public class AccountEx02 {
 
 객체는 선언, 생성, 초기화할 수 있다.
 
-예제3
+//예제3--------------------------------------------------------------------------------------
+
+public class AccountEx03 {
+
+	public static void main(String[] args) {
+		Account pyomin = new Account("110-468-5555", "표민", 0);
+		pyomin.deposit(20000);
+		try {
+			int amount = pyomin.withdraw(7000);
+			System.out.println("민이 인출액" + amount);
+		} catch (Exception e) {
+			System.out.println(e .getMessage());
+		}
+		Account sunmin = new Account("111-22-33333", "선민", 100);
+		sunmin.deposit(3000);
+		
+		System.out.println("민이 : " + pyomin.balance);
+		System.out.println("거래은행 : " + sunmin.BANKNAME);
+		System.out.println("계좌번호 : " + sunmin.accountNo);
+		System.out.println("예금주 이름 : " + sunmin.ownerName);
+		System.out.println("잔액 : " + sunmin.balance);
+	}
+}
 
 
