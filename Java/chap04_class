@@ -62,22 +62,39 @@ public class AccountEX01 {
 //예제2-----------------------------------------------------------------------------------------------
 
 public class AccountEx02 {
-	
+
 	public static void main(String[] args) {
 		Account min = new Account("22-33-55555", "민", 0);
 		Account dowoo = new Account("22-33-88888", "도우", 2000);
-		
+
 		min.deposit(5000);
 		try {
 			min.withdraw(1000);
-		} catch (Exception e) {//돈 찾는 건 예외처리를 해줬기 때문에 에러난다. 그러므로 try/catch 해준다.
+			printAccount(min);//출력
+			printAccount(dowoo);//출력
+
+		} catch (Exception e) {// 돈 찾는 건 예외처리를 해줬기 때문에 에러난다. 그러므로 try/catch 해준다.
 			System.out.println(e.getMessage());
 		}
-		
-		System.out.println("도우의 잔액 = "+ dowoo.balance);
+
+//		System.out.println("계좌번호 : " + min.accountNo);
+//		System.out.println("예금주이름 : " + min.ownerName);
+//		System.out.println("민의 잔액 = " + min.balance);
+//		System.out.println("계좌번호 : " + dowoo.accountNo);
+//		System.out.println("예금주이름 : " + dowoo.ownerName);
+//		System.out.println("민의 잔액 = " + dowoo.balance);
+
+	}
+
+	// 통장 잔고 출력 메서드
+	static void printAccount(Account obj) {
+		System.out.println("계좌번호 : " + obj.accountNo);
+		System.out.println("예금주이름 : " + obj.ownerName);
+		System.out.println("민의 잔액 = " + obj.balance);
+		System.out.println("=====================================");
+
 	}
 }
-
 
 
 *class 생성
