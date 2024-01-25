@@ -95,3 +95,21 @@ public static void main(String[] args) {
 		System.out.println(total);
 	}
 
+*foreach 루프
+for(타입변수 : 배열명){
+	
+}
+
+public static void main(String[] args) {
+		int[] nums = {85, 120, 15, 96, 8, 23, 63, 12};
+		int total = 0;
+//		for(int i = 0; i < nums.length; i++) {
+//			total += nums[i];
+//		}
+		for(int value: nums) {
+			total += value;
+		}
+		System.out.println(total);
+	}
+
+
