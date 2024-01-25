@@ -64,8 +64,8 @@ public class AccountEX01 {
 public class AccountEx02 {
 
 	public static void main(String[] args) {
-		Account min = new Account("22-33-55555", "민", 0);
-		Account dowoo = new Account("22-33-88888", "도우", 2000);
+		Account min = new Account("22-33-55555", "민", 0);//인스턴스 객체 생성, 선언, 초기화 했다.
+		Account dowoo = new Account("22-33-88888", "도우", 2000);//인스턴스 객체 생성, 선언, 초기화 했다.
 
 		min.deposit(5000);
 		try {
@@ -101,7 +101,7 @@ public class AccountEx02 {
 클래스를 설계
 멤버변수, 생성자, 메서드
 
-
+객체는 선언, 생성, 초기화할 수 있다.
 
 
 
