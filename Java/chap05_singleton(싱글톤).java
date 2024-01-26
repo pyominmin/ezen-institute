@@ -79,7 +79,7 @@ public class CheomseongdaeEX01 {
 		Cheomseongdae min = Cheomseongdae.getInstance();//표를 끊고 첨성대를 방문했다.
 		Cheomseongdae sunmin = Cheomseongdae.getInstance();//표를 끊고 첨성대를 방문했다.
 		
-		//둘이 같은 첨성대에 가서 관람했다.
+		//시간차 두고 둘이 같은 첨성대에 가서 관람했다.
 		min.show("민");
 		sunmin.show("선민");
 		//다른 객체가 같은 곳을 들어가는게 싱글톤이다.
