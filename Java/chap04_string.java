@@ -102,3 +102,42 @@ public static void main(String[] args) {
 		
 	}
 
+
+*메서드 contains
+
+public static void main(String[] args) {
+		String book = "자바의 정석";
+		int location = book.indexOf("자바");//문자의 위치 값을 찾아줌
+		if(location != -1) {
+			System.out.println("자바와 관련된 책이군요");
+		}else {
+			System.out.println("자바와 관련없는 책이군요");
+		}
+		 boolean result = book.contains("자바");//참 거짓의 boolean값으로 돌려줌
+		 if(result) {
+			 System.out.println("자바와 관련된 책이군요");
+		 }else {
+			 System.out.println("자바와 관련없는 책이군요");
+		 }
+	}
+
+
+*메서드 split
+split - 분리해준다.
+	
+public static void main(String[] args) {
+		String str = "김철수,이영희,홍길동,박찬호,손흥민";
+		String[] names = str.split(",");// ,은 구분자이므로 배열에 추가되지 않는다.//구분자는 공간을 분리한다.
+		System.out.println("**합격자 명단**");
+		for(int i = 0; i < names.length; i++) {
+			System.out.println((i + 1) + "번 : " + names[i]);
+		}
+	}
+결과
+**합격자 명단**
+1번 : 김철수
+2번 : 이영희
+3번 : 홍길동
+4번 : 박찬호
+5번 : 손흥민
+
