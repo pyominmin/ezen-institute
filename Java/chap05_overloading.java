@@ -36,7 +36,7 @@ public class PhysicalInfo {
 	}
 	
 	//매서드 오버로딩
-	public void update(int age) {
+	public void update(int age) {//메서드 오버로딩(같은 이름을 가진 메서드를 여러개 만들 수 있다.)
 		this.age = age;
 	}
 	
