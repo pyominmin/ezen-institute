@@ -11,7 +11,7 @@ public class Singleton {
 	private static Singleton sington = new Singleton();
 	
 	//빈 생성자
-	public Singleton() {
+	private Singleton() {
 		
 	}
 	
