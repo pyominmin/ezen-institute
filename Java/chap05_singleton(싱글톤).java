@@ -53,7 +53,7 @@ public class Cheomseongdae {
 	private static Cheomseongdae cheom = new Cheomseongdae();
 	
 	//생성자
-	public Cheomseongdae() {
+	private Cheomseongdae() {
 		
 	}
 	
