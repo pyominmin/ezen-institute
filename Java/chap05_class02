@@ -1,0 +1,26 @@
+//계산기 클래스
+
+public class Calculator {
+	
+	//더하기 메서드
+	int sum(int num1, int num2) {
+		int hap = 0;
+		hap = num1 + num2;
+		return hap;
+		
+	}
+
+}
+
+//출력
+	
+public class CalculatorEx01 {
+	
+	public static void main(String[] args) {
+		Calculator myCal = new Calculator();
+		int result = myCal.sum(23, 41);
+		System.out.println("계산 결과는 = " + result);
+		
+	}
+
+}
