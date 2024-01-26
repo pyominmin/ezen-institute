@@ -1,26 +1,45 @@
 //계산기 클래스
 
+* ...(변수) 메서드 - 배열로 정의해서 하나씩 받아들인다 *신기능*
+같은 타입의 데이터만 사용 가능
+
+//계산기 클래스
 public class Calculator {
 	
 	//더하기 메서드
-	int sum(int num1, int num2) {
+	int sum(int ...nums) {
 		int hap = 0;
-		hap = num1 + num2;
+		for(int i = 0; i < nums.length; i++) {
+			hap += nums[i];
+		}
 		return hap;
 		
 	}
-
+	
 }
 
 //출력
+	
 	
 public class CalculatorEx01 {
 	
 	public static void main(String[] args) {
 		Calculator myCal = new Calculator();
+		
 		int result = myCal.sum(23, 41);
 		System.out.println("계산 결과는 = " + result);
 		
+		int result2 = myCal.sum(23, 41, 55);
+		System.out.println("계산 결과는 = " + result2);
+		
+		int result3 = myCal.sum(23, 41, 55, 88, 44, 65, 12);
+		System.out.println("계산 결과는 = " + result3);
+
+		int[] values = {2, 45, 96, 10, 35};//배열 값 전달 가능
+		int result4 = myCal.sum(values);
+		System.out.println("계산 결과는 = " + result4);
 	}
 
 }
+
+
