@@ -1,0 +1,28 @@
+//인터페이스
+public interface iAnimal {
+
+	//추상메서드 : 본체가 없는 메서드
+	void eat();
+}
+-------------------------------------------------------
+*타이거 클래스
+public class Tiger implements iAnimal{//implements는 구현하는걸 요구한다.
+
+	@Override
+	public void eat() {
+		System.out.println("멧돼지를 잡아먹습니다.");	
+	}
+	
+}
+-------------------------------------------------------
+
+*고양이 클래스
+public class Cat implements iAnimal{
+
+	@Override
+	public void eat() {
+		System.out.println("생선을 좋아합니다.");
+		
+	}
+	
+}
