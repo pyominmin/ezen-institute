@@ -20,6 +20,7 @@ public class ExceptionEx01 {
 2)
 
 
+
 public class ExceptionEx02 {
 
 	public static void main(String[] args) {
@@ -37,8 +38,11 @@ public class ExceptionEx02 {
 			System.out.println("문자 데이터는 수치로 변환할 수 없습니다.");
 		}catch(Exception e) {
 			System.out.println("예외발생(개발자에게 문의하세요))" + e.getMessage());
+		}finally {
+			System.out.println("무조건 실행");
 		}
 
 	}
 
 }
+
