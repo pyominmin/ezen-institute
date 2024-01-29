@@ -1,8 +1,7 @@
 *interface
 
 *리모컨 인터페이스
-  package objectInterface;
-
+ 
 public interface RemoteControl {
 	//상수 필드
 	int MAX_VOLUME = 10;
@@ -12,12 +11,32 @@ public interface RemoteControl {
 	void ternOn();
 	void ternOff();
 	void setVolume(int volume);
+	
+	//디폴트 메서드
+	default void setMute(boolean mute) {
+		if(mute) {
+			System.out.println("무음 처리합니다.");
+			setVolume(MIN_VOLUME);
+		}else {
+			System.out.println("무음 해제합니다.");
+		}
+	}
+	
+	//정적 메서드
+	static void changeBattery() {
+		System.out.println("리모콘 건전지를 교환합니다.");
+	}
+	
 }
+
+
 ----------------------------------------------------------------------------------
   *오디오 클래스
 
-public class Audio implements RemoteControl {//implements는 구현하는걸 요구한다.
+
+public class Audio implements RemoteControl {
 	private int volume;
+	private int memoryVolume;
 
 	@Override
 	public void ternOn() {
@@ -43,8 +62,20 @@ public class Audio implements RemoteControl {//implements는 구현하는걸 요
 		System.out.println("현재 Audio 볼륨 : " + this.volume);
 	}
 
-}
+	// 디폴트 메서드 재정의
+	@Override
+	public void setMute(boolean mute) {
+		if (mute) {
+			this.memoryVolume = this.volume;
+			System.out.println("무음 처리합니다.");
+			setVolume(MIN_VOLUME);
+		} else {
+			System.out.println("무음 해제합니다.");
+			setVolume(this.memoryVolume);
+		}
+	}
 
+}
 ----------------------------------------------------------------------------------
   *티비 클래스
 
@@ -81,6 +112,7 @@ public class Television implements RemoteControl{
 ----------------------------------------------------------------------------------
   *출력
   
+
 public class RemoteControlEX01 {
 
 	public static void main(String[] args) {
@@ -90,12 +122,19 @@ public class RemoteControlEX01 {
 		rc = new Television();
 		rc.ternOn();
 		rc.setVolume(7);
+		rc.setMute(true);
+		rc.setMute(false);
 		rc.ternOff();
 		
 		rc = new Audio();
 		rc.ternOn();
 		rc.setVolume(3);
+		rc.setMute(true);
+		rc.setMute(false);
+		RemoteControl.changeBattery();
 		rc.ternOff();
+		
+		
 
 	}
 
