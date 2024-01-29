@@ -139,3 +139,68 @@ public class RemoteControlEX01 {
 	}
 
 }
+
+----------------------------------------------------------------------------------
+*스마트티비
+//인터페이스 검색
+public interface Searchable {
+	//추상메서드
+	void search(String url);
+	
+}
+
+----------------------------------------------------------------------------------
+*implements 컨트롤
+import java.io.Serializable;
+
+public class SmartTV implements RemoteControl, Searchable{
+	private int volume;
+	
+	@Override
+	public void search(String url) {
+		System.out.println(url + "를 검색합니다.");
+		
+	}
+
+	@Override
+	public void ternOn() {
+		System.out.println("smartTV를 켭니다.");
+		
+	}
+
+	@Override
+	public void ternOff() {
+		System.out.println("smartTV를 끕니다.");
+		
+	}
+
+	@Override
+	public void setVolume(int volume) {
+		if (volume > RemoteControl.MAX_VOLUME) {
+			this.volume = RemoteControl.MAX_VOLUME;
+		} else if (volume < RemoteControl.MIN_VOLUME) {
+			this.volume = RemoteControl.MIN_VOLUME;
+		} else {
+			this.volume = volume;
+		}
+		System.out.println("현재 SmartTV 볼륨 : " + this.volume);
+	}
+		
+	}
+
+
+----------------------------------------------------------------------------------
+*출력
+
+public class SmartTVEx01 {
+
+	public static void main(String[] args) {
+		RemoteControl rc = new SmartTV();
+		rc.ternOn();
+		rc.setVolume(5);
+		Searchable sa = new SmartTV();
+		sa.search("http://www.naver.com");
+
+	}
+
+}
