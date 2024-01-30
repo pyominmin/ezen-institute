@@ -1,0 +1,23 @@
+*API
+
+*나노타임
+package API;
+
+public class RunTimeEx01 {
+
+	public static void main(String[] args) {
+		long time1 = System.nanoTime();
+		long sum = 0;
+		for(int i = 1; i <= 100000; i++) {
+			sum += i;
+		}
+		long time2 = System.nanoTime();
+		System.out.println("1부터 100까지의 합 =" + sum);
+		System.out.println("100000까지 합을 계산하는데 걸린 시간= " + (time2 - time1));
+	}
+
+}
+
+----------------------------------------------------------------------------------------------
+
+  
