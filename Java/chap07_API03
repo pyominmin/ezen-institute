@@ -1,0 +1,22 @@
+*날짜
+
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
+public class DateEx01 {
+
+	public static void main(String[] args) {
+		Date now = new Date();
+		System.out.println(now);//생성 시점의 값
+		SimpleDateFormat sdf;//선언
+		sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		System.out.println(sdf.format(now));//2024-01-30 12:13:16
+		
+		sdf = new SimpleDateFormat("yyyy년 MM월 dd일");
+		System.out.println(sdf.format(now));
+		
+	}
+
+}
+
+-----------------------------------------------------------------------------------
