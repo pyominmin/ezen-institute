@@ -87,3 +87,58 @@ String data = " 김철수 이영희 홍길동 박찬호 손흥민";
 
 ---------------------------------------------------------------------------------------
 
+*박싱(Boxing), //언박싱(unBoxing)
+
+public class BoxingEx01 {
+
+	public static void main(String[] args) {
+		int num1 = 10;
+		System.out.println(num1);
+		//박싱(Boxing)// 앱개발의 경우 많이 사용한다.
+		Integer num2 = 20;//번지가 기억된다.
+		System.out.println(num2.intValue());//값 가져오기
+		
+		//언박싱(unBoxing)
+		int value = num2;
+		int num3 = 50;
+		int num4 = 50;
+		System.out.println(num3 == num4);
+		
+		Integer num5 = 50;
+		Integer num6 = 50;
+		System.out.println(num5.equals(num6));
+		
+	}
+
+}
+---------------------------------------------------------------------------------------
+
+*Math메서드
+
+
+public class MathEx01 {
+
+	public static void main(String[] args) {
+		double num1 = Math.round(5.7); //반올림 메서드
+		System.out.println(num1);
+		
+		double num2 = Math.ceil(8.3); //올림 메서드
+		double num3 = Math.ceil(-8.3);
+		System.out.println(num2);
+		System.out.println(num3);
+		
+		double num4 = Math.floor(8.3);//내림
+		double num5 = Math.floor(-8.3);
+		System.out.println(num4);
+		System.out.println(num5);
+		
+		int num6 = Math.max(12, 74);//두 수중에 큰 값을 돌려준다.
+		System.out.println(num6);
+		
+		int num7 = Math.min(10, 5);
+		System.out.println(num7);
+		
+	}
+
+}
+
