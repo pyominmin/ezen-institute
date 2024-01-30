@@ -82,3 +82,61 @@ public class TimeZoneEx01 {
 
 -----------------------------------------------------------------------------------
 
+*DecimalFormat, Format
+
+
+import java.text.DecimalFormat;
+
+public class DecimalFormatEx01 {
+
+	public static void main(String[] args) {
+		int price = 2650000;
+		System.out.println(price);
+		DecimalFormat df;
+		df = new DecimalFormat("#,###원");
+		System.out.println(df.format(price));
+		
+		double num = 51246.36521;
+		df = new DecimalFormat("#,###.00");
+		System.out.println(df.format(num));
+		
+	}
+
+}
+
+-----------------------------------------------------------------------------------
+
+*Pattern
+
+
+
+import java.util.Scanner;
+import java.util.regex.Pattern;
+
+public class RegEx01 {
+
+	public static void main(String[] args) {
+		Scanner in = new Scanner(System.in);
+		System.out.print("전화번호 입력 : ");
+		String phoneNumber = in.next();
+		String regExp = "(02|010)-\\d{3,4}-\\d{4}";
+		boolean result = Pattern.matches(regExp, phoneNumber);
+		if(result) {
+			System.out.println("올바른 전화번호입니다.");
+		}else {
+			System.out.println("전화번호 형식이 아닙니다.");
+		}
+		System.out.print("이메일 입력 : ");
+		String email = in.next();
+		regExp = "\\w+@\\w+\\.\\w+(\\.\\w+)?";//w는 아무 문자 사용가능 +는 한자 이상 쓰겠다.// .은 단독으로 사용하지 못하기 때문에 \\.해야 한다.//(\\.\\w+)?은 있을수도있고 없을수도 있다.
+		result = Pattern.matches(regExp, email);
+		if(result) {
+			System.out.println("올바른 이메일 주소입니다.");
+		}else {
+			System.out.println("이메일 주소 형식이 아닙니다.");
+		}
+	}
+
+-----------------------------------------------------------------------------------
+
+
