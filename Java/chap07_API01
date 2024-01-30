@@ -1,0 +1,41 @@
+*API
+
+package API;
+//클래스
+public class SmartPhone {
+	//필드(멤버변수)
+	private String company;
+	private String os;
+	
+	
+	//생성자
+	public SmartPhone(String company, String os) {
+		this.company = company;
+		this.os = os;
+	}
+
+	//메서드
+	@Override
+	public String toString() {
+		return company + "에서 만들었으며 운영체제는 " + os;
+	}
+	
+	
+	
+}
+-------------------------------------------------------------
+  *출력
+  package API;
+
+public class SmartPhoneEx01 {
+
+	public static void main(String[] args) {
+		SmartPhone myPhone = new SmartPhone("삼성", "안드로이드");
+		//System.out.println(myPhone.toString());//toString은 유일하게 생략 가능하다.
+		System.out.println(myPhone.toString());
+		//자바의 변수는 타입이 두가지로 나뉜다. 1.기본타입:int, char, double 2.참조타입: enum, String
+		String str = "홍길동";
+		System.out.println(str);//toString 생략
+	}
+
+}
