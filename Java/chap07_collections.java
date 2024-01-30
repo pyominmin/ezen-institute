@@ -68,6 +68,7 @@ public class GenericEx01 {
 		list.add("백길동");
 		list.add("손흥민");
 		list.remove(2);
+		list.set(0, "박찬호");
 		String name = list.get(2);
 		for(int i = 0; i < list.size();i++) {
 			System.out.println(list.get(i));
