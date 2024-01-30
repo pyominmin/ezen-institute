@@ -156,11 +156,89 @@ public class HashMapEx01 {
 }
 	
 
-	Map<String, Integer> map = new HashMap<String, Integer>();
+
+	public static void main(String[] args) {
+//		Map<Integer, String> map = new HashMap<Integer, String>();
+//		map.put(1, "홍길동");
+//		map.put(2, "김철수");
+//		map.put(3, "이영희");
+//		map.put(4, "박찬호");
+//		System.out.println("총 인원수 : " + map.size());
+//		System.out.println(map.get(3)); //key를 가지고 값을 이끌어낸다.
+		
+		Map<String, Integer> map = new HashMap<String, Integer>();
 		map.put("홍길동", 75);
 		map.put("김철수", 90);
 		map.put("이영희", 96);
 		map.put("박찬호", 85);
 		map.put("손흥민", 80);
 		
-		System.out.println(map.get("이영희"));
+		//System.out.println(map.get("이영희"));
+		
+		System.out.println("**성적 현황표**");
+		Set<String> key = map.keySet();
+		Iterator<String> iter = key.iterator();
+		while(iter.hasNext()) {
+			String name = iter.next();
+			Integer score = map.get(name);
+			System.out.println("이름 : " + name + ", 점수 : " + score);
+		}
+		
+	}
+
+}
+
+-----------------------------------------------------------------------------------
+
+*stack : FILO : 
+*queuw : FIFO : 선입선출
+
+//Stack
+클래스
+
+public class Coin {
+
+		//필드
+		private int value;
+
+		//생성자
+		public Coin(int value) {
+			this.value = value;
+		}
+
+		//getter
+		public int getValue() {
+			return value;
+		}
+
+		//setter
+		public void setValue(int value) {
+			this.value = value;
+		}
+
+
+}
+
+*출력
+
+
+import java.util.Stack;
+
+public class StackEx01 {
+
+	public static void main(String[] args) {
+		Stack<Coin> coinBox = new Stack<Coin>();
+		coinBox.push(new Coin(100));
+		coinBox.push(new Coin(50));
+		coinBox.push(new Coin(500));
+		coinBox.push(new Coin(10));
+		
+		while(!coinBox.isEmpty()) {
+			Coin coin = coinBox.pop();
+			System.out.println("꺼내온 동전 : " + coin.getValue());
+		}
+
+	}
+
+}
+
