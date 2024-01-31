@@ -2,6 +2,7 @@
 //클래스
 
 public interface Calculable {
+	//추상메서드
 	void calculate (int x, int y);
 }
 
@@ -36,3 +37,23 @@ public class CalculableEx02 {
 ----------------------------------------------------------------------------------------
 
 *람다식
+//추상메서드가 하나일 때만 사용가능
+
+public class CalculableEx03 {
+
+	public static void main(String[] args) {
+		Calculable calcu;//선언
+		//람다식
+		calcu = (x,y) ->{
+			System.out.println("두 수의 합 = " + (x+y));
+		};
+			
+		calcu.calculate(20, 45);
+		
+		calcu = (x,y) ->{
+				System.out.println("두 수의 차 = " + (x-y));				
+			};
+		calcu.calculate(50, 30);
+	}
+
+}
