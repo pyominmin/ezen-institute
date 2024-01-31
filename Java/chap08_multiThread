@@ -1,0 +1,222 @@
+*멀티쓰레드
+
+
+import java.awt.Toolkit;
+
+public class ThreadEx01 {
+
+	public static void main(String[] args) {
+		// 멀티쓰레드(Multi Thread)
+		Thread bThread = new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				Toolkit tool = Toolkit.getDefaultToolkit();
+				for (int i = 1; i <= 5; i++) {
+					tool.beep();
+					try {
+						Thread.sleep(500);
+					} catch (Exception e) {
+
+					}
+				}
+				
+			}
+		});
+		bThread.start();
+		
+		
+		for (int i = 1; i <= 5; i++) {
+			System.out.println("띵");
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+}
+
+---------------------------------------------------------------------------
+*class
+  
+import java.awt.Toolkit;
+
+public class WorkerThread extends Thread {
+
+	@Override
+	public void run() {
+		Toolkit tool = Toolkit.getDefaultToolkit();
+		for (int i = 1; i <= 5; i++) {
+			tool.beep();
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+}
+
+*출력
+
+public class ThreadEx02 {
+
+	public static void main(String[] args) {
+		Thread bThread = new WorkerThread();
+		bThread.start();
+		
+		for (int i = 1; i <= 5; i++) {
+			System.out.println("띵");
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+
+			}
+		}
+
+	}
+
+}
+---------------------------------------------------------------------------
+
+*익명쓰레드
+
+  
+import java.awt.Toolkit;
+
+public class ThreadEx03 {
+
+	public static void main(String[] args) {
+		// 멀티쓰레드(Multi Thread)
+		new Thread(new Runnable() {
+			
+			@Override
+			public void run() {
+				Toolkit tool = Toolkit.getDefaultToolkit();
+				for (int i = 1; i <= 5; i++) {
+					tool.beep();
+					try {
+						Thread.sleep(500);
+					} catch (Exception e) {
+
+					}
+				}
+				
+			}
+		}).start();
+		
+		
+		for (int i = 1; i <= 5; i++) {
+			System.out.println("띵");
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+
+			}
+		}
+	}
+
+}
+
+---------------------------------------------------------------------------
+
+  *쓰레드를 이용한 더하기
+
+  *class
+  
+public class SumThread extends Thread{
+	//필드(멤버변수)
+	private int sum;
+
+	public int getSum() {
+		return sum;
+	}
+
+	public void setSum(int sum) {
+		this.sum = sum;
+	}
+
+	@Override
+	public void run() {
+		for(int i = 1; i <= 100; i++) {
+			sum += i;
+		}
+	}
+	
+}
+
+*출력
+
+  
+public class SumThreadEx01 {
+
+	public static void main(String[] args) {
+		SumThread sThread = new SumThread();
+		sThread.start();
+		
+		try {
+			sThread.join();//join메서드란 내 쓰레드가 돌때까지 기다려준다.
+		}catch (InterruptedException e) {
+		
+		}
+		
+		System.out.println("1부터 100까지의 합 = " + sThread.getSum());
+
+	}
+
+}
+---------------------------------------------------------------------------
+  *데몬쓰레드
+  //데몬-메인쓰레드가 끝나면 자동으로 보조 쓰레드를 종료시키는 것
+
+  *class
+
+  
+public class AutoSaveThread extends Thread{
+	//메서드
+	public void save() {
+		System.out.println("작업 내용이 저장됨.");
+	}
+
+	@Override
+	public void run() {
+		while(true) {
+			try {
+				Thread.sleep(1000);
+			}catch (InterruptedException e) {
+				
+			}
+			save();
+		}
+	}
+	
+}
+
+*출력
+
+  
+public class AutoSaveThreadEx01 {
+
+	public static void main(String[] args) {
+		AutoSaveThread autoSave = new AutoSaveThread();
+		autoSave.setDaemon(true);
+		autoSave.start();
+		
+		try {
+			Thread.sleep(5000);
+		}catch (InterruptedException e) {
+			
+		}
+		
+		int sum = 0;
+		for(int i = 1; i <= 100; i++) {
+			sum += i;
+		}
+		System.out.println("1부터 100까지의 합 = " + sum);
+	}
+
+}
