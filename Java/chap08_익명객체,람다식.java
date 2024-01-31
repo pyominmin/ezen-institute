@@ -1,6 +1,7 @@
 *익명객체
 //클래스
 
+@FunctionalInterface//람다식을 쓰겠다는 어노테이션
 public interface Calculable {
 	//추상메서드
 	void calculate (int x, int y);
@@ -90,6 +91,59 @@ public class CalculableEx03 {
 				System.out.println("두 수의 차 = " + (x-y));				
 			};
 		calcu.calculate(50, 30);
+	}
+
+}
+
+----------------------------------------------------------------------------------------
+
+*람다식
+
+
+import java.awt.Toolkit;
+
+public class ThreadEx04 {
+
+	public static void main(String[] args) {
+		// 멀티쓰레드(Multi Thread)
+//		new Thread(new Runnable() {
+//			
+//			@Override
+//			public void run() {
+//				Toolkit tool = Toolkit.getDefaultToolkit();
+//				for (int i = 1; i <= 5; i++) {
+//					tool.beep();
+//					try {
+//						Thread.sleep(500);
+//					} catch (Exception e) {
+//
+//					}
+//				}
+//				
+//			}
+//		}).start();
+
+		new Thread(() -> {
+			Toolkit tool = Toolkit.getDefaultToolkit();
+			for (int i = 1; i <= 5; i++) {
+				tool.beep();
+				try {
+					Thread.sleep(500);
+				} catch (Exception e) {
+
+				}
+			}
+		
+		}).start();
+
+		for (int i = 1; i <= 5; i++) {
+			System.out.println("띵");
+			try {
+				Thread.sleep(500);
+			} catch (Exception e) {
+
+			}
+		}
 	}
 
 }
