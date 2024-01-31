@@ -5,8 +5,44 @@ public interface Calculable {
 	//추상메서드
 	void calculate (int x, int y);
 }
+//sum class
+public class Sum implements Calculable{
 
-//출력
+	@Override
+	public void calculate(int x, int y) {
+		System.out.println("두 수의 합 = " + (x + y));
+		
+	}
+
+}
+//빼기class
+
+public class Subtract implements Calculable{
+
+	@Override
+	public void calculate(int x, int y) {
+		System.out.println("두 수의 차 = " + (x - y));
+		
+	}
+
+}
+
+//출력1
+
+public class CarculableEx01 {
+
+	public static void main(String[] args) {
+		Sum hap = new Sum(); //인스턴스 객체 생성
+		hap.calculate(10, 23);
+		
+		Subtract cha = new Subtract(); //인스턴스 객체 생성
+		cha.calculate(50, 42);
+	}
+
+}
+
+
+//출력2
 
 public class CalculableEx02 {
 
