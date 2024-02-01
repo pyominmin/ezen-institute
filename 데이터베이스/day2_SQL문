@@ -53,6 +53,9 @@ select * from employees where hire_date = '1990-01-01' and gender = 'F'
 2. select emp_no, title from titles where title in ('Engineer', 'Staff');
 
 -----------------------------------------------------------------------------
+*김씨를 찾고 싶으면? 
+select * from employees where name like '김%';
+
 
 
 INSERT - 데이터를 삽입하는 쿼리문
