@@ -14,8 +14,23 @@ SELECT - 데이터를 불러오는 쿼리문
       select * from titles;
       select first_name, birth_date, gender from employees;
 
+use employees;
+show table status;
+*desc(테이블의 구조를 보는 것)
+desc employees;
 
-    
+*별칭 주는 법
+select first_name as 이름, birth_date as 생년월일, gender as 성별 from employees;
+
+*select 열이름... from 테이블이름 where 조건(조회할 열이름 비교연산자 값)
+where는 필요한 것만 보여주는 것이다.
+ select * from employees where first_name = 'Mary';
+-----------------------------------------------------------------------------
+select * from salaries;
+*연봉이 6만 달러 이상인 사람 조회하기
+select * from salaries where salary >= 60000;
+
+
 INSERT - 데이터를 삽입하는 쿼리문
 UPDATE - 데이터를 수정하는 쿼리문
 DELETE - 테이블의 데어터를 삭제하는 쿼리문
