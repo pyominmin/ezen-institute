@@ -29,6 +29,30 @@ where는 필요한 것만 보여주는 것이다.
 select * from salaries;
 *연봉이 6만 달러 이상인 사람 조회하기
 select * from salaries where salary >= 60000;
+*상품이 50이상인 것만 조회
+select * from producttbl where amount >= 50;
+
+날짜와 문자는 홑따옴표''
+-----------------------------------------------------------------------------
+*여성 사원만 조회하기
+select * from employees where gender = 'F';
+*1960년 이후에 태어난 직원
+select * from employees where birth_date >= '1960-01-01';
+*1960년이후에 입사한 first_name이 'mary'인 자료를 검색
+select * from employees where first_name = 'mary' and hire_date >= '1990-01-01';
+
+* 급여(salaries) 테이블 급여(sala 6000 ~ 8000) 사이에 있는 직원 검색(and, between)
+1. select * from salaries where salary >= 60000 and salary <= 80000;
+2.(책 196p)select * from salaries where salary between 60000 and 80000;
+
+*90년대 이상에 고용된 여성 찾기(and)
+select * from employees where hire_date = '1990-01-01' and gender = 'F'
+
+*엔지니어와 스태프 자료 검색 사원번호와 타이틀만 보이게(or, in)
+1. select emp_no, title from titles where title = 'Engineer' or title = 'Staff';
+2. select emp_no, title from titles where title in ('Engineer', 'Staff');
+
+-----------------------------------------------------------------------------
 
 
 INSERT - 데이터를 삽입하는 쿼리문
