@@ -1,0 +1,22 @@
+데이터베이스는 대소문자를 구분하지 않는다.
+
+*SQL문
+SELECT, INSERT, UPDATE, DELETE
+
+SELECT - 데이터를 불러오는 쿼리문
+  -조회 : 원하는 데이터를 가져와 주는 기본적인 쿼리문
+  -select 열이름... from 테이블이름 where 조건
+  데이터베이스 지정 후(Schema : employees)
+    - select *(별표는 모든 열 선택) from employees(테이블 이름);
+    - select *(별표는 모든 열 선택) from employees.titles(테이블 이름);데이터베이스 입력을 생략하면 자동으로 붙는다.
+      ex) 
+      select * from employees;
+      select * from titles;
+      select first_name, birth_date, gender from employees;
+
+
+    
+INSERT - 데이터를 삽입하는 쿼리문
+UPDATE - 데이터를 수정하는 쿼리문
+DELETE - 테이블의 데어터를 삭제하는 쿼리문
+
