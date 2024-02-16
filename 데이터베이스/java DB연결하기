@@ -241,9 +241,9 @@ public class JDBCConnection {
 			try {
 				if (rs != null)
 					rs.close();
-				if (rs != null)
+				if (stmt != null)
 					stmt.close();
-				if (rs != null)
+				if (conn != null)
 					conn.close();
 			} catch (Exception e2) {
 				// dummy
